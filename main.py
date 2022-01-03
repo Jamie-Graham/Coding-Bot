@@ -1,6 +1,8 @@
 import discord
+import os
 import random 
 from discord.ext import commands
+from keep_alive import keep_alive
 from discord import Member
 from discord.ext.commands import has_permissions, MissingPermissions
 import requests
@@ -170,4 +172,5 @@ async def cheer(ctx):
   randomcheer = random.choice(Cheer)
   await ctx.send(ctx.author.mention + (" ") + randomcheer)
 
-client.run("OTAyMTE2MjE4MDUwMzE4MzM3.YXZvMg.njz-3v71sJdKZxDXdSswMeB-JpU")
+keep_alive()
+client.run(os.getenv('Hi'))
